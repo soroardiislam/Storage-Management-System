@@ -1,0 +1,32 @@
+{
+  "name": "storage-management-backend",
+  "version": "1.0.0",
+  "description": "Backend for Storage Management System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "storage",
+    "management",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Janu",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
