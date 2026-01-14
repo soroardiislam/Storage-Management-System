@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../users/model.js";
-import { sendMail } from "../../utils/email.service.js";
+import { generateToken } from "../../utils/jwt.js";
 
 export const register = async (data) => {
   data.password = await bcrypt.hash(data.password, 10);
@@ -19,7 +19,7 @@ export const login = async (email, password) => {
     console.log("Incorrect password");
     
   };
-
+  return generateToken(user);
 };
 
 
