@@ -1,14 +1,15 @@
 import bcrypt from "bcrypt";
-import User from "../users/model.js";
+import User from "./model.js";
 import { generateToken } from "../../utils/jwt.js";
-import { generateResetToken } from "../../utils/token.js";
+import { generateOTP } from "../../utils/otp.js";
 import { sendMail } from "../../utils/email.service.js";
 
 export const register = async (data) => {
-   const use = await User.findOne(data.email);
-  if (use){
-    console.log("User already exists");
+  const exists = await User.findOne({ email: data.email });
+  if (exists) {
+    throw new Error("Email already exists");
   }
+
   data.password = await bcrypt.hash(data.password, 10);
   const user = await User.create(data);
   await sendMail(user.email, "Welcome!", "Your account has been created.");
@@ -16,39 +17,49 @@ export const register = async (data) => {
 };
 
 export const login = async (email, password) => {
-  const user = await User.findOne({ email });
-  if (!user){
+  const user = await User.findOne({ email }).select("+password");
+  if (!user) {
     console.log("User not found");
   }
   const match = await bcrypt.compare(password, user.password);
-  if (!match){
-    console.log("Incorrect password");  
-  };
+  if (!match) {
+    console.log("Incorrect password");
+  }
   return generateToken(user);
 };
 
 export const forgotPassword = async (email) => {
   const user = await User.findOne({ email });
-  if (!user){
+  if (!user) {
     console.log("User not found");
-    
   }
-  const token = generateResetToken();
-  user.resetToken = token;
-  user.resetTokenExpiry = Date.now() + 3600000;
+  const otp = generateOTP();
+  user.resetOtp = otp;
+  user.resetOtpExpiry = Date.now() + 5 * 60 * 1000;
   await user.save();
-  await sendMail(email, "Reset Password", `Token: ${token}`);
+  await sendMail(email, "Your OTP", `Your OTP is: ${otp}`);
 };
 
-export const resetPassword = async (token, newPassword) => {
+export const resetPassword = async (otp, newPassword) => {
   const user = await User.findOne({
-    resetToken: token,
-    resetTokenExpiry: { $gt: Date.now() },
+    resetOtp: otp.trim(),
+    resetOtpExpiry: { $gt: Date.now() },
   });
-  if (!user){
-    console.log("Invalid or expired token");
-  };
+
+  if (!user) {
+    const error = new Error("Invalid or expired token");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  if (!newPassword) {
+    const error = new Error("New password is required");
+    error.statusCode = 400;
+    throw error;
+  }
+
   user.password = await bcrypt.hash(newPassword, 10);
-  user.resetToken = null;
+  user.resetOtp = null;
+  user.resetOtpExpiry = null;
   await user.save();
 };

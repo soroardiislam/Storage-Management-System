@@ -2,7 +2,11 @@ import * as authService from "./service.js";
 export const register = async (req, res, next) => {
   try {
     const user = await authService.register(req.body);
-    res.json(user);
+    res.json({
+      message: "User register successfull",
+      success: true,
+      user: user,
+    });
   } catch (err) {
     next(err);
   }
@@ -10,16 +14,29 @@ export const register = async (req, res, next) => {
 export const login = async (req, res, next) => {
   try {
     const token = await authService.login(req.body.email, req.body.password);
-    res.json({ token });
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "strict",
+    });
+
+    res.setHeader("Authorization", `Bearer ${token}`);
+
+    res.json({
+      message: "User login successfull",
+      success: true,
+    });
   } catch (err) {
     next(err);
   }
 };
+
 export const forgotPassword = async (req, res, next) => {
   try {
     await authService.forgotPassword(req.body.email);
     res.json({
-      message: "Email sent",
+      message: "Email sent successfully",
       success: true,
     });
   } catch (err) {
@@ -28,12 +45,22 @@ export const forgotPassword = async (req, res, next) => {
 };
 export const resetPassword = async (req, res, next) => {
   try {
-    await authService.resetPassword(req.body.token, req.body.password);
+    const { otp, newPassword } = req.body;
+    await authService.resetPassword(otp, newPassword);
     res.json({
-      message: "Password reset",
+      message: "Password reset successfully",
       success: true,
     });
   } catch (err) {
     next(err);
   }
+};
+
+export const logout = async (req, res) => {
+  res.clearCookie("token");
+  res.setHeader("Authorization", "");
+  res.json({
+    success: true,
+    message: "Logged out successfully",
+  });
 };
