@@ -13,3 +13,8 @@ export const createUser = async (data) => {
   return user;
 };
 
+export const listUsers = async (page, limit) => {
+  const skip = (page - 1) * limit;
+  return User.find().skip(skip).limit(limit);
+};
+

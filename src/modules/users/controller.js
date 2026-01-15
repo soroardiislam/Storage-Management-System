@@ -11,3 +11,15 @@ export const createUser = async (req, res, next) => {
     next(err);
   }
 };
+export const listUsers = async (req, res, next) => {
+  try {
+    const users = await userService.listUsers(req.query.page, req.query.limit);
+    res.json({
+      message: "User list open successfully",
+      success: true,
+      users,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
