@@ -23,3 +23,26 @@ export const listUsers = async (req, res, next) => {
     next(err);
   }
 };
+export const updateUser = async (req, res, next) => {
+  try {
+    const user = await userService.updateUser(req.params.id, req.body);
+    res.json({
+      message: "User update successfully",
+      success: true,
+      user,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+export const deleteUser = async (req, res, next) => {
+  try {
+    await userService.deleteUser(req.params.id);
+    res.json({
+      message: "Deleted successfully",
+      success: true,
+    });
+  } catch (err) {
+    next(err);
+  }
+};

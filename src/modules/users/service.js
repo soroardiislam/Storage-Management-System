@@ -18,3 +18,6 @@ export const listUsers = async (page, limit) => {
   return User.find().skip(skip).limit(limit);
 };
 
+export const updateUser = async (id, data) =>
+  User.findByIdAndUpdate(id, data, { new: true });
+export const deleteUser = async (id) => User.findByIdAndDelete(id);
