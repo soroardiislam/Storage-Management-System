@@ -1,6 +1,9 @@
 import express from "express";
 import * as userController from "./controller.js";
+import { auth } from "../../middlewares/auth.middleware.js";
+import { allow } from "../../middlewares/role.middleware.js";
 const router = express.Router();
+router.use(auth, allow("admin"));
 router.post("/", userController.createUser);
 router.get("/", userController.listUsers);
 router.put("/:id", userController.updateUser);
