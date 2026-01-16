@@ -32,7 +32,7 @@ export const createSendToken = (user, statusCode, res) => {
   });
 };
 
-export const registerUser = async ( name, email, password, confirmPassword) => {
+export const registerUser = async (name, email, password, confirmPassword) => {
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     throw new AppError("User already exists", 400);
