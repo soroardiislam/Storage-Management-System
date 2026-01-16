@@ -13,9 +13,7 @@ export const createSendToken = (user, statusCode, res) => {
   const token = signToken(user._id);
 
   const cookieOptions = {
-    expires: new Date(
-      Date.now() + 90 * 24 * 60 * 60 * 1000 
-    ),
+    expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     httpOnly: true,
   };
 
@@ -40,9 +38,8 @@ export const registerUser = async (userData) => {
     email: userData.email,
     password: userData.password,
     avatar: userData.avatar,
-    role: userData.role || "user", 
+    role: userData.role || "user",
   });
-
 
   return newUser;
 };
@@ -58,7 +55,6 @@ export const loginUser = async (email, password) => {
   return user;
 };
 
-
 const generateOTP = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
 };
@@ -69,10 +65,9 @@ export const forgotPassword = async (email) => {
     throw new AppError("There is no user with email address.", 404);
   }
 
-
   const otp = generateOTP();
   user.otp = otp;
-  user.otpExpires = Date.now() + 10 * 60 * 1000; 
+  user.otpExpires = Date.now() + 10 * 60 * 1000;
   await user.save({ validateBeforeSave: false });
 
   const message = `Your password reset OTP is ${otp}. It is valid for 10 minutes.`;
@@ -80,18 +75,15 @@ export const forgotPassword = async (email) => {
   try {
     await sendEmail({
       email: user.email,
-      subject: "Your Password Reset OTP (Valid for 10 min)",
+      subject: "Your Password Reset OTP ",
       message,
     });
-    return { message: "OTP sent to email!" };
+    return { message: "OTP sent to email" };
   } catch (err) {
     user.otp = undefined;
     user.otpExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    throw new AppError(
-      "There was an error sending the email. Try again later!",
-      500
-    );
+    throw new AppError("There was an error sending the email", 500);
   }
 };
 
@@ -110,7 +102,6 @@ export const verifyOTP = async (email, otp) => {
 };
 
 export const resetPassword = async (email, otp, newPassword) => {
-  
   const user = await User.findOne({
     email,
     otp,
