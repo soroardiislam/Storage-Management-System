@@ -32,13 +32,19 @@ export const createSendToken = (user, statusCode, res) => {
   });
 };
 
-export const registerUser = async (userData) => {
+export const registerUser = async (email, password, confirmPassword) => {
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    throw new AppError("User already exists", 400);
+  }
+  if (password !== confirmPassword) {
+    throw new AppError("Password and confirmPassword don't match", 400);
+  }
+
   const newUser = await User.create({
-    name: userData.name,
-    email: userData.email,
-    password: userData.password,
-    avatar: userData.avatar,
-    role: userData.role || "user",
+    email,
+    password,
+    role: "user",
   });
 
   return newUser;

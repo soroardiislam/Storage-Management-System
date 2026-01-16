@@ -2,7 +2,8 @@ import * as authService from "./auth.service.js";
 import catchAsync from "../../utils/catchAsync.js";
 
 export const register = catchAsync(async (req, res) => {
-  const newUser = await authService.registerUser(req.body);
+   const { email, password,confirmPassword } = req.body;
+  const newUser = await authService.registerUser(email, password, confirmPassword);
   authService.createSendToken(newUser, 201, res);
 });
 
