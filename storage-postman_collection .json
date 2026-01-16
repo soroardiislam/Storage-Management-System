@@ -1,0 +1,1822 @@
+{
+  "info": {
+    "_postman_id": "6359f540-b98c-4316-9996-585bfb848106",
+    "name": "storage-management-system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48392996",
+    "_collection_link": "https://go.postman.co/collection/48392996-6359f540-b98c-4316-9996-585bfb848106?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n    \"name\":\"Soroardi\",\r\n    \"email\":\"mdsoroardi60228@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"confirmPassword\":\"123456\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/auth/register",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"name\":\"Soroardi\",\r\n    \"email\":\"mdsoroardi60228@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"confirmPassword\":\"123456\" \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/auth/register",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:07:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "399"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bed7e8cbdef5853-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1fc-1lA0+/P81ZmyGwd9Av9lsAFznEc\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0bfbecb0-c49e-48f2"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyYTEyZmY5MWU4ZmMyNzhlZTI4OSIsImlhdCI6MTc2ODU2NTI2OCwiZXhwIjoxNzc2MzQxMjY4fQ.XOTH_Lp4vMJKIQGU23j1redNa1VDeUWWWU_3S85HebM; Path=/; Expires=Thu, 16 Apr 2026 12:07:48 GMT; HttpOnly"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyYTEyZmY5MWU4ZmMyNzhlZTI4OSIsImlhdCI6MTc2ODU2NTI2OCwiZXhwIjoxNzc2MzQxMjY4fQ.XOTH_Lp4vMJKIQGU23j1redNa1VDeUWWWU_3S85HebM\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Soroardi\",\n            \"email\": \"mdsoroardi60228@gmail.com\",\n            \"avatar\": \"\",\n            \"storageUsed\": 0,\n            \"storageLimit\": 5368709120,\n            \"role\": \"user\",\n            \"_id\": \"696a2a12ff91e8fc278ee289\",\n            \"createdAt\": \"2026-01-16T12:07:46.489Z\",\n            \"updatedAt\": \"2026-01-16T12:07:46.489Z\",\n            \"passwordChangedAt\": \"2026-01-16T12:07:47.045Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\",\r\n    \"password\":\"1234567\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi60228@gmail.com\",\r\n    \"password\":\"123456\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:10:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "399"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bed8259f9d6a491-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1fc-UqEGNmET2VxWeRznPeKkLeUpbdk\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c8c31738-c151-4e49"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyYTEyZmY5MWU4ZmMyNzhlZTI4OSIsImlhdCI6MTc2ODU2NTQyMiwiZXhwIjoxNzc2MzQxNDIyfQ.9jx1qGvg2ehGkzHjGQKSEgVESXk5dj-vL4XArnlon28; Path=/; Expires=Thu, 16 Apr 2026 12:10:22 GMT; HttpOnly"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyYTEyZmY5MWU4ZmMyNzhlZTI4OSIsImlhdCI6MTc2ODU2NTQyMiwiZXhwIjoxNzc2MzQxNDIyfQ.9jx1qGvg2ehGkzHjGQKSEgVESXk5dj-vL4XArnlon28\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"696a2a12ff91e8fc278ee289\",\n            \"name\": \"Soroardi\",\n            \"email\": \"mdsoroardi60228@gmail.com\",\n            \"avatar\": \"\",\n            \"storageUsed\": 0,\n            \"storageLimit\": 5368709120,\n            \"role\": \"user\",\n            \"createdAt\": \"2026-01-16T12:07:46.489Z\",\n            \"updatedAt\": \"2026-01-16T12:07:46.489Z\",\n            \"passwordChangedAt\": \"2026-01-16T12:07:47.045Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "forgotPassword",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/forgotPassword",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "forgotPassword"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "forgotPassword",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi60228@gmail.com\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/forgotPassword",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "forgotPassword"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "50"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"32-mUiii8VX6lUeC3pZzec1PHsv/Go\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:25:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"OTP sent to email\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "verifyOTP",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\",\r\n    \"otp\":\"731372\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/verifyOTP",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "verifyOTP"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "verifyOTP",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\",\r\n    \"otp\":\"214853\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/auth/verifyOTP",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "verifyOTP"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:46:41 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "77"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedb7932aa8bb2f-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"6f-FPbFr8MNbairt1wOeTDwWhj+adI\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "b5d406e3-d807-44bb"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"OTP verified successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"status\": \"success\",\n        \"message\": \"OTP Verified\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "resetPassword",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\",\r\n    \"password\":\"1234567\",\r\n    \"otp\":\"214853\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/auth/resetPassword",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "resetPassword"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "resetPassword",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n\r\n    \"email\":\"mdsoroardi602828@gmail.com\",\r\n    \"password\":\"1234567\",\r\n    \"otp\":\"214853\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/auth/resetPassword",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "resetPassword"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:47:24 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "400"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedb891e970bb2f-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1fd-f8+HEMif8Ph7rPOZwkXiE2GFB3U\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "e84b2b45-8ced-4e89"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyZmJkZmY5MWU4ZmMyNzhlZTI5YyIsImlhdCI6MTc2ODU2NzY0NCwiZXhwIjoxNzc2MzQzNjQ0fQ.KRhd67WGDkrOLBgGxokgooXri3N28xs0rwkG_gei_wk; Path=/; Expires=Thu, 16 Apr 2026 12:47:24 GMT; HttpOnly"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmEyZmJkZmY5MWU4ZmMyNzhlZTI5YyIsImlhdCI6MTc2ODU2NzY0NCwiZXhwIjoxNzc2MzQzNjQ0fQ.KRhd67WGDkrOLBgGxokgooXri3N28xs0rwkG_gei_wk\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"696a2fbdff91e8fc278ee29c\",\n            \"name\": \"Soroardi\",\n            \"email\": \"mdsoroardi602828@gmail.com\",\n            \"avatar\": \"\",\n            \"storageUsed\": 0,\n            \"storageLimit\": 5368709120,\n            \"role\": \"user\",\n            \"createdAt\": \"2026-01-16T12:31:57.759Z\",\n            \"updatedAt\": \"2026-01-16T12:47:22.838Z\",\n            \"passwordChangedAt\": \"2026-01-16T12:47:23.246Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/auth/logout",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "logout",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/auth/logout",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 12:51:33 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "52"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedbeb1bde7a475-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"38-GV/DtonZ2SLDCC11/qyI/GHD27Y\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "8d91f870-1f66-4da5"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "jwt=loggedout; Path=/; Expires=Fri, 16 Jan 2026 12:51:43 GMT; HttpOnly"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Logged out successfully\",\n    \"status\": \"success\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "storage",
+      "item": [
+        {
+          "name": "create-folder",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Documents\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/storage/folder",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "storage",
+                "folder"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "create-folder",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Documents\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/storage/folder",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "storage",
+                    "folder"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:03:39 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "181"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedd063399a9cba-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"119-GyfQHYGYc8gJxgqVvdftDPgqkhA\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "13a3b79d-2682-4a95"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Create Folder Successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"folder\": {\n            \"name\": \"Documents\",\n            \"user\": \"696a2fbdff91e8fc278ee29c\",\n            \"parentFolder\": null,\n            \"path\": [],\n            \"_id\": \"696a372aff91e8fc278ee2b0\",\n            \"createdAt\": \"2026-01-16T13:03:38.754Z\",\n            \"updatedAt\": \"2026-01-16T13:03:38.754Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "upload-file",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "c7e536e4-1d5a-40ef-a94e-95fa784706b9",
+                  "src": "ANQT0c67H/Resume.pdf"
+                },
+                {
+                  "key": "folderId",
+                  "value": "696a372aff91e8fc278ee2b0",
+                  "type": "text",
+                  "uuid": "8bdd5991-2288-4a06-b3e3-6fc530a5b374"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/storage/upload",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "storage",
+                "upload"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "upload-file",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "uuid": "c7e536e4-1d5a-40ef-a94e-95fa784706b9",
+                      "src": "ANQT0c67H/Resume.pdf"
+                    },
+                    {
+                      "key": "folderId",
+                      "value": "696a372aff91e8fc278ee2b0",
+                      "type": "text",
+                      "uuid": "8bdd5991-2288-4a06-b3e3-6fc530a5b374"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/storage/upload",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "storage",
+                    "upload"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:08:29 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "329"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedd7740f099ec8-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"246-3Tze+WqUGwfV+ea6eDdA/jVz844\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "9380ebdd-3063-4e64"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"file uploaded Successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"file\": {\n            \"name\": \"Resume.pdf\",\n            \"fileUrl\": \"https://res.cloudinary.com/ds42g6c6d/image/upload/v1768568908/storage-app/696a2fbdff91e8fc278ee29c/a97a94293452e1c1245dd81b20646536_pqaxh9.pdf\",\n            \"publicId\": \"storage-app/696a2fbdff91e8fc278ee29c/a97a94293452e1c1245dd81b20646536_pqaxh9\",\n            \"fileType\": \"image\",\n            \"size\": 96713,\n            \"folder\": \"696a372aff91e8fc278ee2b0\",\n            \"user\": \"696a2fbdff91e8fc278ee29c\",\n            \"isFavorite\": false,\n            \"_id\": \"696a384cff91e8fc278ee2b3\",\n            \"createdAt\": \"2026-01-16T13:08:28.983Z\",\n            \"updatedAt\": \"2026-01-16T13:08:28.983Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get-files",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/storage/",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "storage",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get-files",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/storage/",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "storage",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:11:17 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "177"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9beddb9699d541fc-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"10c-VTyAoA4DM/Nv+sNB3zhRPc5WFIk\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c28f016e-e64c-43b3"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"results\": 1,\n    \"data\": {\n        \"folders\": [\n            {\n                \"_id\": \"696a372aff91e8fc278ee2b0\",\n                \"name\": \"Documents\",\n                \"user\": \"696a2fbdff91e8fc278ee29c\",\n                \"parentFolder\": null,\n                \"path\": [],\n                \"createdAt\": \"2026-01-16T13:03:38.754Z\",\n                \"updatedAt\": \"2026-01-16T13:03:38.754Z\",\n                \"__v\": 0\n            }\n        ],\n        \"files\": []\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "add-favorite",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/storage/favorite/696a384cff91e8fc278ee2b3",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "storage",
+                "favorite",
+                "696a384cff91e8fc278ee2b3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "add-favorite",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/storage/favorite/696a384cff91e8fc278ee2b3",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "storage",
+                    "favorite",
+                    "696a384cff91e8fc278ee2b3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:13:19 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "326"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedde8c69a25853-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"247-eLxuNZywfUGKcSO46wlY5UijO9U\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "ce6cad20-46e6-4149"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Add to favorite successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"file\": {\n            \"_id\": \"696a384cff91e8fc278ee2b3\",\n            \"name\": \"Resume.pdf\",\n            \"fileUrl\": \"https://res.cloudinary.com/ds42g6c6d/image/upload/v1768568908/storage-app/696a2fbdff91e8fc278ee29c/a97a94293452e1c1245dd81b20646536_pqaxh9.pdf\",\n            \"publicId\": \"storage-app/696a2fbdff91e8fc278ee29c/a97a94293452e1c1245dd81b20646536_pqaxh9\",\n            \"fileType\": \"image\",\n            \"size\": 96713,\n            \"folder\": \"696a372aff91e8fc278ee2b0\",\n            \"user\": \"696a2fbdff91e8fc278ee29c\",\n            \"isFavorite\": true,\n            \"createdAt\": \"2026-01-16T13:08:28.983Z\",\n            \"updatedAt\": \"2026-01-16T13:13:18.747Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get-storage-details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/storage/details",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "storage",
+                "details"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get-storage-details",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/storage/details",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "storage",
+                    "details"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:14:57 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "97"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bede0f6e8e19ec8-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"73-+YEAHuDINXfBmYKYGGPMtbSu3FM\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "51111a5d-e2dc-4962"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"storageUsed\": 96713,\n        \"storageLimit\": 5368709120,\n        \"usagePercentage\": 0.0018014200031757353\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "get-me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/users/me",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get-me",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/users/me",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "me"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:30:23 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "247"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bedf703cc588dfd-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"171-ew2/6BCbpT3AgCRVvFPyZTk4pr8\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "c6a7986f-b276-4175"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User fetched successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"696a2fbdff91e8fc278ee29c\",\n            \"name\": \"Soroardi\",\n            \"email\": \"mdsoroardi602828@gmail.com\",\n            \"avatar\": \"\",\n            \"storageUsed\": 96713,\n            \"storageLimit\": 5368709120,\n            \"role\": \"user\",\n            \"createdAt\": \"2026-01-16T12:31:57.759Z\",\n            \"updatedAt\": \"2026-01-16T13:08:29.224Z\",\n            \"passwordChangedAt\": \"2026-01-16T12:47:23.246Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update-me",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "md soroardi",
+                  "type": "text",
+                  "uuid": "9ef02b43-b0a3-40b3-b331-cdd379290e1f"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "ad06170c-bfdf-421b-8dba-550ab66bf1e7",
+                  "src": "KRP2eNN_C/pic.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/updateMe",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "updateMe"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update-me",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "md soroardi",
+                      "type": "text",
+                      "uuid": "9ef02b43-b0a3-40b3-b331-cdd379290e1f"
+                    },
+                    {
+                      "key": "avatar",
+                      "type": "file",
+                      "uuid": "ad06170c-bfdf-421b-8dba-550ab66bf1e7",
+                      "src": "KRP2eNN_C/pic.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/users/updateMe",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "users",
+                    "updateMe"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "478"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1de-W+zrMr3YPaCrpPd1R1YdHl10KW4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 13:39:54 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User updated successfully\",\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"696a2fbdff91e8fc278ee29c\",\n            \"name\": \"md soroardi\",\n            \"email\": \"mdsoroardi602828@gmail.com\",\n            \"avatar\": \"https://res.cloudinary.com/ds42g6c6d/image/upload/v1768570751/storage-app/avatars/pcq9nwpcywvw4dczlhen.jpg\",\n            \"storageUsed\": 96713,\n            \"storageLimit\": 5368709120,\n            \"role\": \"user\",\n            \"createdAt\": \"2026-01-16T12:31:57.759Z\",\n            \"updatedAt\": \"2026-01-16T13:39:54.741Z\",\n            \"passwordChangedAt\": \"2026-01-16T12:47:23.246Z\",\n            \"__v\": 0\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "update-password",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"currentPassword\": \"1234567\",\r\n  \"newPassword\": \"1234567\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://storage-management-system-1.onrender.com/api/users/updateMyPassword",
+              "protocol": "https",
+              "host": [
+                "storage-management-system-1",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "users",
+                "updateMyPassword"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "update-password",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"currentPassword\": \"1234567\",\r\n  \"newPassword\": \"1234567\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://storage-management-system-1.onrender.com/api/users/updateMyPassword",
+                  "protocol": "https",
+                  "host": [
+                    "storage-management-system-1",
+                    "onrender",
+                    "com"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    "updateMyPassword"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Fri, 16 Jan 2026 14:23:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "56"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "CF-RAY",
+                  "value": "9bee44f88fc4a491-DAC"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"3e-FrrRoIi12xWq40SnfTrEBgiOlWs\""
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "ced067bc-f667-4223"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "Render"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "Server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Password updated successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
