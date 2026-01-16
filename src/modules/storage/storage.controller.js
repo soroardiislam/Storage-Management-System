@@ -54,13 +54,16 @@ export const getFiles = catchAsync(async (req, res) => {
 export const toggleFavorite = catchAsync(async (req, res) => {
   const { fileId } = req.params;
   const file = await storageService.toggleFavorite(fileId, req.user.id);
-  res.status(200).json({ status: "success", data: { file } });
+  res.status(200).json({
+     message: "Add to favorite successfully",
+     status: "success", 
+     data: { file } 
+    });
 });
 
 export const getStorageDetails = catchAsync(async (req, res) => {
   const user = req.user;
   res.status(200).json({
-    message: "Add to favorite successfully",
     status: "success",
     data: {
       storageUsed: user.storageUsed,
