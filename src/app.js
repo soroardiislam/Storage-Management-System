@@ -7,6 +7,7 @@ import AppError from "./utils/AppError.js";
 
 import authRouter from "./modules/auth/auth.routes.js";
 import storageRouter from "./modules/storage/storage.routes.js";
+import userRouter from "./modules/user/user.routes.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRouter);
 app.use("/api/storage", storageRouter);
+app.use("/api/users", userRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
