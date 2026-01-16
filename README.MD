@@ -18,10 +18,13 @@ Clone the repository
 ```
 https://github.com/soroardiislam/Storage-Management-System
 ```
-
+# Postman json file 
+```
+https://github.com/soroardiislam/Storage-Management-System/tree/main/postman-json-file
+```
 
 # Postman documentation
-POSTMAN_DOCUMENT_LINK =https://github.com/soroardiislam/hire-me/tree/main/Postman%20documentation
+[![Postman Documentation](https://img.shields.io/badge/Postman-API%20Docs-orange?logo=postman)](https://documenter.getpostman.com/view/48392996/2sBXVhEX7Q)
 
 
 # Tech Stack
